@@ -1,0 +1,67 @@
+{% extends "main/base_generic.html" %}
+
+{% block title %}Enginetoday | Contact{% endblock %}
+
+{% block page %}Contact{% endblock %}
+{% block page1 %}CONTACT{% endblock %}
+
+{% block menuActiveContact %}active{% endblock %}
+
+{% block content %}
+
+ <section id="aa-contact">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+          <div class="aa-contact-area">
+            <div class="aa-contact-top">
+              <div class="aa-contact-top-left">
+                <iframe width="100%" height="450" frameborder="0" allowfullscreen="" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2221.5484546156918!2d15.584961251710416!3d56.16491146750421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46566ccf824ea8db%3A0xcc0532c22b1a6326!2sKarlskrona+kommun+Vuxenutbildningen+%26+SFI!5e0!3m2!1sen!2sse!4v1473000650639"></iframe>
+              </div>
+              <div class="aa-contact-top-right">
+                <h2>Contact</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae placeat aspernatur aperiam, quisquam voluptas enim tempore ab itaque nam modi eos corrupti distinctio nobis labore dolorum quae tenetur. Sapiente, sequi.</p>
+                <ul class="contact-info-list">
+                  <li> <i class="fa fa-phone"></i> +46 1234567</li>
+                  <li> <i class="fa fa-envelope-o"></i> info@usedcarforsale.com</li>
+                  <li> <i class="fa fa-map-marker"></i> 36008 AL-77, Talladega, AL 35160, Sweden</li>
+                </ul>
+              </div>
+            </div>
+            <div class="aa-contact-bottom">
+              <div class="aa-title">
+                <h2>Send Your Message</h2>
+                <span></span>
+                <p>Your email address will not be published. Required fields are marked <strong class="required">*</strong></p>
+              </div>
+              <div class="aa-contact-form">
+                <form class="contactform">                  
+                  <p class="comment-form-author">
+                    <label for="author">Name <span class="required">*</span></label>
+                    <input type="text" name="author" value="" size="30" required="required">
+                  </p>
+                  <p class="comment-form-email">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" name="email" value="" aria-required="true" required="required">
+                  </p>
+                  <p class="comment-form-url">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject">  
+                  </p>
+                  <p class="comment-form-comment">
+                    <label for="comment">Message</label>
+                    <textarea name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                  </p>                
+                  <p class="form-submit">
+                    <input type="submit" name="submit" class="aa-browse-btn" value="Send Message">
+                  </p>        
+                </form>
+              </div>
+            </div>
+          </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+{% endblock %}

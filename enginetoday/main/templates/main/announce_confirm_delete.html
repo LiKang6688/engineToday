@@ -1,0 +1,9 @@
+<form action="" method="post">
+{% csrf_token %}
+<input type="hidden"
+       name="after"
+       value="{{ object.item.get_absolute_url }}" />
+<input type="submit"
+       value="Confirm to Delete"
+       name="DeleteAndShowItem" />
+</form>

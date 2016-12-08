@@ -1,0 +1,106 @@
+{% extends "main/account/base_account.html" %}
+
+{% block title %}Enginetoday | Registrera{% endblock %}
+
+{% block content %}
+  <body>   
+  <section id="aa-signin">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-signin-area">
+            <div class="aa-signin-form">
+              <div class="aa-signin-form-title">
+                <a class="aa-logo aa-property-home" href="{% url 'main:index' %}"><span> EngineToday</span></a>
+                <h4>Skapa ditt konto och bo hos oss</h4>
+                <p>För att kunna delta i budgivning på enginetoday.se behöver du registrera ett användarkonto. Detta är helt kostnadsfritt.</p>
+              </div>
+              <form class="contactform" action="/user/" method='post'>{% csrf_token %}
+                <div class="aa-single-field">
+                  <label for="email">E-postadress <span class="required">*</span></label>
+                  <input type="email" required="required" aria-required="true" value="" name="email">
+                </div>
+                <div class="aa-single-field">
+                  <label for="first_name">First Name <span class="required">*</span></label>
+                  <input type="text" required="required" aria-required="true" value="" name="first_name">
+                </div>
+                <div class="aa-single-field">
+                  <label for="last_name">Last Name <span class="required">*</span></label>
+                  <input type="text" required="required" aria-required="true" value="" name="last_name">
+                </div>
+                <div class="aa-single-field">
+                  <label for="password">Password <span class="required">*</span></label>
+                  <input type="password" required="required" name="password"> 
+                </div>
+                <div class="aa-single-field">
+                  <label for="confirm-password">Confirm Password <span class="required">*</span></label>
+                  <input type="password" required="required" name="confirm-password"> 
+                </div>
+                 <div class="aa-single-field">
+                  <label for="region">Län <span class="required">*</span></label>
+                  <select  id="region" class="form-control" name="region">
+                    <option value="0">&laquo;Välj region&raquo;</option>
+                    <option value="1" >Norrbotten</option>
+                    <option value="2" >Västerbotten</option>
+                    <option value="3" >Jämtland</option>
+                    <option value="4" >Västernorrland</option>
+                    <option value="5" >Gävleborg</option>
+                    <option value="6" >Dalarna</option>
+                    <option value="7" >Värmland</option>
+                    <option value="8" >Örebro</option>
+                    <option value="9" >Västmanland</option>
+                    <option value="10" >Uppsala</option>
+                    <option value="11" >Stockholm</option>
+                    <option value="12" >Södermanland</option>
+                    <option value="13" >Skaraborg</option>
+                    <option value="14" >Östergötland</option>
+                    <option value="15" >Göteborg</option>
+                    <option value="16" >Älvsborg</option>
+                    <option value="17" >Jönköping</option>
+                    <option value="18" >Kalmar</option>
+                    <option value="19" >Gotland</option>
+                    <option value="20" >Halland</option>
+                    <option value="21" >Kronoberg</option>
+                    <option value="22" >Blekinge</option>
+                    <option value="23" >Skåne</option>
+                    <option value="99" >Flera platser</option>
+                  </select>
+                  </div>
+                <div class="aa-single-field">
+                  <label for="area">Område <span class="required">*</span></label>
+                  <select id="area" class="form-control" name="area">
+                    <option value="">&laquo;Välj kommun&raquo;</option>
+                  </select>
+                </div>
+                <div class="aa-single-field">
+                  <label for="birth">Födelsedatum <span class="required">*</span></label>
+                  <input type="password" required="required" name="birth">
+                </div>
+                <div class="aa-single-field">
+                  <label for="mobile_phone">Mobile Phone <span class="required">*</span></label>
+                  <input type="password" required="required" name="mobile_phone">
+                </div>
+                <div class="aa-single-field">
+                  <input  type="checkbox"  required="required" name="accept-terms"> 
+                  <label for="accept-terms"> I have read and accept the terms .<span class="required">*</span></label>
+                </div>
+                <div class="aa-single-field">
+                  <input  type="checkbox"  checked="checked" required="required" name="accept-newsletter"> 
+                  <label for="accept-newsletter"> Yes, I want to receive newsletters from Usedcarforsale.
+                  <span class="required">*</span></label>
+                </div>
+                <div class="aa-single-submit">
+                  <input type="submit" value="Create Account" name="submit">
+                  <p>Already had an account? <a href="{% url 'main:signin' %}">SIGNIN NOW!</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+
+  </body>
+{% endblock %}

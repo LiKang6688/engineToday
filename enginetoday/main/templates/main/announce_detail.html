@@ -1,0 +1,7 @@
+{% extends "main/content-frame.html" %}
+
+{% block content %}
+    <h3>{{announceDetail.title}}</h3>
+    <h6>{{announceDetail.submit_time}}</h6>
+    {{announceDetail.description|safe|linebreaks}} <!-- the "safe" filter tells jinja that the string is safe (no need to escape html tags), so we can have html tags taking effect (come into operation) instead of escaped and displayed as plain text -->
+{% endblock %}

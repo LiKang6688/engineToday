@@ -1,0 +1,8 @@
+{% extends "main/content-frame.html" %}
+
+{% block content %}
+    {% for announceDetail in announceList %}
+    <h5>{{ announceDetail.submit_time|date:"Y-m-d" }} <a href="/announce/{{announceDetail.id}}">{{announceDetail.title}}</a></h5> <!-- jinja: apply a filter to format date -->
+    {% endfor %}
+{% endblock %}
+
