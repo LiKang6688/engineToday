@@ -5,6 +5,7 @@ from django.conf.urls import url, include
 
 from enginetoday.main.views import *
 
+
 app_name = 'main'
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
@@ -17,8 +18,8 @@ urlpatterns = [
     url(r'^account/profile/$', ProfileView.as_view(), name='Profile'),
 
 
-    url(r'^account/register/$', RegisterView.as_view(), name='register'),
-    url(r'^account/signin/$', SigninView.as_view(), name='signin'),
+#   url(r'^account/register/$', RegisterView.as_view(), name='register'),
+#   url(r'^account/signin/$', SigninView.as_view(), name='signin'),
 
 
     url(r'^account/thanks-for-activating-account/$', ThanksforactivatingaccountView.as_view(),

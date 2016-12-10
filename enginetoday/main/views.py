@@ -86,12 +86,12 @@ class RegisterView(generic.ListView):
         return Announce.objects.all().order_by("-submit_time")
 
 
-class SigninView(generic.ListView):
-    template_name = 'main/account/signin.html'
-    context_object_name = 'announceList'
+# class SigninView(generic.ListView):
+#    template_name = 'main/account/signin.html'
+ #   context_object_name = 'announceList'
 
-    def get_queryset(self):
-        return Announce.objects.all().order_by("-submit_time")
+ #   def get_queryset(self):
+ #       return Announce.objects.all().order_by("-submit_time")
 
 
 class ThanksforactivatingaccountView(generic.ListView):

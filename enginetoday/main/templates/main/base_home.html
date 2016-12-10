@@ -52,6 +52,9 @@
     <a class="scrollToTop" href="#"><i class="fa fa-angle-double-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
 
+
+
+
   <!-- Start header section -->
   <header id="aa-header">
     <div class="container">
@@ -72,12 +75,52 @@
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <div class="aa-header-right">
-                  <a href="{% url 'main:register' %}" class="aa-register">
+                    {% if user.is_authenticated %}
+{#                         <ul class="nav navbar-nav navbar-right">#}
+{#            <li>#}
+{#              <a href="{% url 'reviews' user.username %}">#}
+{#                <span data-toggle="tooltip" data-placement="bottom" data-container="body" title="My profile">{{ user.profile.get_screen_name }}</span>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <span class="navbar-text username-divider"></span>#}
+{#            </li>#}
+{#            {% comment %}#}
+{#            <li>#}
+{#              <a href="{% url 'library:index' %}">#}
+{#                Library#}
+{#              </a>#}
+{#            </li>#}
+{#            {% endcomment %}#}
+{#            <li>#}
+{#              <a href="{% url 'settings:settings' %}">#}
+{#                <span data-toggle="tooltip" data-placement="bottom" data-container="body" title="Account settings">#}
+{#                  <span class="glyphicon glyphicon-cog"></span>#}
+{#                </span>#}
+{#              </a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <a href="{% url 'account:signout' %}">#}
+{#                <span data-toggle="tooltip" data-placement="bottom" data-container="body" title="Sign out">#}
+{#                  <span class="glyphicon glyphicon-log-out"></span>#}
+{#                </span>#}
+{#              </a>#}
+{#            </li>#}
+{#          </ul>#}
+                        <a href="{% url 'settings:settings' %}" class="aa-register">
+                  Settings  <span class="glyphicon glyphicon-cog"></span>
+                  </a>
+                  <a href="{% url 'account:signout' %}" class="aa-login">
+                 Logout  <span class="glyphicon glyphicon-log-out"></span>
+                  </a>
+                    {% else %}
+                  <a href="{% url 'account:signup' %}" class="aa-register">
                   Register  <span class="glyphicon glyphicon-registration-mark"></span>
                   </a>
-                  <a href="{% url 'main:signin' %}" class="aa-login">
+                  <a href="{% url 'account:signin' %}" class="aa-login">
                  Login  <span class="glyphicon glyphicon-log-in"></span>
                   </a>
+                      {% endif %}
                 </div>
               </div>
             </div>

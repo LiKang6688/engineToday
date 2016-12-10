@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 from enginetoday.authentication.forms import SignUpForm
-# from parsifal.reviews.models import Review
+
 
 @csrf_exempt
 def signup(request):
@@ -27,7 +27,9 @@ def signup(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.add_message(request, messages.SUCCESS, 'Your account were successfully created.')
-            return HttpResponseRedirect('/' + username + '/')
+            # return HttpResponseRedirect('/' + username + '/')
+            return HttpResponseRedirect('/' + 'settings'+ '/')
+
     else:
         return render(request, 'auth/signup.html', { 'form': SignUpForm() })
 
@@ -65,11 +67,11 @@ def reset(request):
     return password_reset(request, template_name='auth/reset.html',
         email_template_name='auth/reset_email.html',
         subject_template_name='auth/reset_subject.txt',
-        post_reset_redirect=reverse('success'))
+        post_reset_redirect=reverse('account:success'))
 
 def reset_confirm(request, uidb64=None, token=None):
     return password_reset_confirm(request, template_name='auth/reset_confirm.html',
-        uidb64=uidb64, token=token, post_reset_redirect=reverse('signin'))
+        uidb64=uidb64, token=token, post_reset_redirect=reverse('account:signin'))
 
 def success(request):
   return render(request, 'auth/success.html')
