@@ -61,13 +61,15 @@ INSTALLED_APPS = (
     'enginetoday.authentication',
     'enginetoday.account',
     'enginetoday.advertise',
+    'enginetoday.image',
     'enginetoday.main',
+
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -155,3 +157,7 @@ EMAIL_FILE_PATH = PROJECT_DIR.parent.child('maildumps')
 # DEFAULT_FROM_EMAIL = 'enginetoday Team <noreply@enginetoday.se>'
 # EMAIL_SUBJECT_PREFIX = '[enginetoday] '
 # SERVER_EMAIL = 'application@enginetoday.se'
+
+# django-ajaximage Settings
+AJAXIMAGE_DIR = 'ajaximage/'
+AJAXIMAGE_AUTH_TEST = lambda u: True

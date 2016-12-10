@@ -9,8 +9,6 @@ from django.db.models.signals import post_save
 from django.db import models
 from django.conf import settings as django_settings
 
-# from parsifal.activities.models import Activity
-# from parsifal.reviews.models import Review
 
 
 class Profile(models.Model):

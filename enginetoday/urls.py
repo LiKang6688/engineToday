@@ -28,13 +28,16 @@ urlpatterns = patterns('enginetoday',
     url(r'^', include('enginetoday.main.urls', namespace='main')),
 
     url(r'^account/', include('enginetoday.authentication.urls', namespace="account")),
-
     url(r'^settings/', include('enginetoday.account.urls', namespace='settings')),
+
+    url(r'^advertise/', include('enginetoday.advertise.urls', namespace='advertise')),
+    url(r'^image/', include('enginetoday.image.urls', namespace='image')),
 
 
     # url(r'^(?P<username>[^/]+)/$', 'advertise.views.advertises', name='advertises'),
 )
 
-
+#  to test the uploads in the development environment
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
