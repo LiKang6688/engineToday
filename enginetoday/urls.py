@@ -30,10 +30,9 @@ urlpatterns = patterns('enginetoday',
     url(r'^account/', include('enginetoday.authentication.urls', namespace="account")),
     url(r'^settings/', include('enginetoday.account.urls', namespace='settings')),
 
-    url(r'^advertise/', include('enginetoday.advertise.urls', namespace='advertise')),
-    url(r'^image/', include('enginetoday.image.urls', namespace='image')),
 
-
+    url(r'^form/', include('enginetoday.advertise.urls', namespace='advertise')),
+    url(r'^ajaximage/', include('ajaximage.urls')),
     # url(r'^(?P<username>[^/]+)/$', 'advertise.views.advertises', name='advertises'),
 )
 

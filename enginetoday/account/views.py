@@ -2,15 +2,12 @@
 
 import os
 from PIL import Image
-from mendeley.session import MendeleySession
-from oauthlib.oauth2 import TokenExpiredError
-from dropbox.client import DropboxClient, DropboxOAuth2Flow
 
 from django.core.urlresolvers import reverse as r
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
 from django.contrib import messages
-from django.template import RequestContext
 from django.contrib.auth.models import User
+from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, get_object_or_404, render
 from django.conf import settings as django_settings

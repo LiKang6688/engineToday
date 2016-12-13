@@ -1,6 +1,6 @@
 from django import forms
 
-from enginetoday.image.widgets import AjaxImageWidget
+from ajaximage.widgets import AjaxImageWidget
 
 
 class AjaxImageUploadForm(forms.Form):

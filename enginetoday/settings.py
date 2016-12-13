@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+# from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 from unipath import Path
-import dj_database_url
+# import dj_database_url
 from decouple import config, Csv
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -61,8 +61,8 @@ INSTALLED_APPS = (
     'enginetoday.authentication',
     'enginetoday.account',
     'enginetoday.advertise',
-    'enginetoday.image',
     'enginetoday.main',
+    'ajaximage',
 
 )
 

@@ -1,6 +1,5 @@
 from django.db import models
-
-from enginetoday.image.fields import AjaxImageField
+from ajaximage.fields import AjaxImageField
 
 
 class Advertise(models.Model):
