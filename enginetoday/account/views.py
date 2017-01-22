@@ -3,11 +3,12 @@
 import os
 from PIL import Image
 
+
 from django.core.urlresolvers import reverse as r
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.template import RequestContext
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, get_object_or_404, render
 from django.conf import settings as django_settings
@@ -44,7 +45,6 @@ def picture(request):
         uploaded_picture = False
     return render(request, 'settings/picture.html', { 'uploaded_picture': uploaded_picture })
 
-
 @login_required
 def emails(request):
     if request.method == 'POST':
@@ -68,6 +68,7 @@ def password(request):
             messages.success(request, u'Password changed successfully.')
             update_session_auth_hash(request, form.user)
         else:
+
             messages.error(request, u'Please correct the error below.')
     else:
         form = PasswordForm(request.user)
